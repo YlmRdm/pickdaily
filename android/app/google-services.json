@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "953601661476",
+    "project_id": "pickdaily-dbdc4",
+    "storage_bucket": "pickdaily-dbdc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953601661476:android:6e1050a58c9201dd8316b1",
+        "android_client_info": {
+          "package_name": "com.picksoft.pickdaily"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953601661476-o54ut9d3klneir713g8cqqnanhlm4dki.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.picksoft.pickdaily",
+            "certificate_hash": "2a5e3e40750993801750786fd0ae6e2b4b8c9ffa"
+          }
+        },
+        {
+          "client_id": "953601661476-hpuv2s39hucijsj6f3s4o28imtcvtja4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8SoSQ4bBTXdG50WP5FLOj39I2uxPpWL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953601661476-hpuv2s39hucijsj6f3s4o28imtcvtja4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "953601661476-1a1pni78gfijlbf60q9l4ivhr38tpk60.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.picksoft.pickdaily"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
