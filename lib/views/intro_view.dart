@@ -1,8 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
-
-import '../main.dart';
+import 'package:pickdaily/views/login_view.dart';
 
 class IntroView extends StatefulWidget {
   const IntroView({Key? key}) : super(key: key);
@@ -173,14 +173,12 @@ class _IntroViewState extends State<IntroView> {
 
   void onDonePress() {
     // TODO: go to next slider pages...
-    Navigator.push(
-      context,
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => MyHomePage(
-          title: 'Flutter Demo Home Page',
-        ),
+        builder: (context) => LoginPage(),
       ),
     );
+    // Navigator.push(context,MaterialPageRoute(builder: (context) => HomeView()),);
   }
 
   Widget renderNextBtn() {
@@ -221,32 +219,28 @@ class _IntroViewState extends State<IntroView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Expanded(
-          child: new IntroSlider(
-            slides: this.slides,
-            //
-            renderSkipBtn: this.renderSkipBtn(),
-            colorSkipBtn: Color(0x33000000),
-            highlightColorSkipBtn: Color(0xff000000),
-            //
-            renderNextBtn: this.renderNextBtn(),
-            //
-            renderDoneBtn: this.renderDoneBtn(),
-            colorDoneBtn: Color(0x33000000),
-            highlightColorDoneBtn: Color(0xff000000),
-            //
-            onDonePress: this.onDonePress,
-            colorDot: Color(0xFF979797),
-            colorActiveDot: Colors.white,
-            scrollPhysics: BouncingScrollPhysics(),
-            // hideStatusBar: true,
-          ),
-        ),
-      ],
+    return Center(
+      /* mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,*/
+      child: new IntroSlider(
+        slides: this.slides,
+        //
+        renderSkipBtn: this.renderSkipBtn(),
+        colorSkipBtn: Color(0x33000000),
+        highlightColorSkipBtn: Color(0xff000000),
+        //
+        renderNextBtn: this.renderNextBtn(),
+        //
+        renderDoneBtn: this.renderDoneBtn(),
+        colorDoneBtn: Color(0x33000000),
+        highlightColorDoneBtn: Color(0xff000000),
+        //
+        onDonePress: this.onDonePress,
+        colorDot: Color(0xFF979797),
+        colorActiveDot: Colors.white,
+        scrollPhysics: BouncingScrollPhysics(),
+        // hideStatusBar: true,
+      ),
     );
   }
 }
