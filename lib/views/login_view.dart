@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pickdaily/services/auth_service.dart';
 import 'package:pickdaily/utils/validator.dart';
 
+import 'home_view.dart';
 import 'profile_view.dart';
 import 'register_view.dart';
 
@@ -26,9 +27,9 @@ class _LoginPageState extends State<LoginPage> {
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
 
-    User? user = FirebaseAuth.instance.currentUser;
+    // User? user = FirebaseAuth.instance.currentUser;
 
-    if (user != null) {
+/*    if (user != null) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => ProfilePage(
@@ -36,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       );
-    }
+    }*/
 
     return firebaseApp;
   }
@@ -137,13 +138,27 @@ class _LoginPageState extends State<LoginPage> {
                                             });
 
                                             if (user != null) {
-                                              Navigator.of(context)
-                                                  .pushReplacement(
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ProfilePage(user: user),
-                                                ),
-                                              );
+                                              print("null degil");
+                                              if (user.emailVerified == true) {
+                                                print("user verify");
+                                                await Navigator.of(context)
+                                                    .pushReplacement(
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        HomeView(),
+                                                  ),
+                                                );
+                                                print(
+                                                    "Arif'in yolu yol değil...");
+                                              } else {
+                                                await Navigator.of(context)
+                                                    .pushReplacement(
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ProfilePage(user: user),
+                                                  ),
+                                                );
+                                              }
                                             }
                                           }
                                         },

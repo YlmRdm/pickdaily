@@ -72,8 +72,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             _isSendingVerification = true;
                           });
                           await _currentUser.sendEmailVerification();
-                          setState(() {
-                            _isSendingVerification = false;
+                          await Future.delayed(Duration(seconds: 10))
+                              .then((value) async {
+                            setState(() {
+                              _isSendingVerification = false;
+                            });
                           });
                         },
                         child: Text('Verify email'),
